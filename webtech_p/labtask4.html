@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donation Registration Page</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+}
+h2 {
+  text-align: center;
+  text-decoration: underline;
+  color: #333;
+}
+fieldset {
+  width: 70%;
+  margin: 20px auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+legend {
+  color: red;
+  font-weight: bold;
+}
+table {
+  width: 90%;
+  margin: auto;
+  border-collapse: collapse;
+}
+td {
+  padding: 8px;
+  vertical-align: top;
+}
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 95%;
+  padding: 6px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+textarea {
+  resize: none;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 6px;
+}
+input[type="submit"],
+input[type="reset"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 10px 5px;
+}
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: #45a049;
+}
+.center {
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<h2>Donation / Registration Form</h2>
+
+<form action="#" method="post">
+<fieldset>
+<legend>Donor Information</legend>
+<table>
+<tr><td>First Name*</td><td><input type="text" name="fname" required placeholder="Enter your first name"></td></tr>
+<tr><td>Last Name*</td><td><input type="text" name="lname" required placeholder="Enter your last name"></td></tr>
+<tr><td>Company</td><td><input type="text" name="company" placeholder="Enter your company (optional)"></td></tr>
+<tr><td>Address 1*</td><td><input type="text" name="addr1" required placeholder="Enter your address"></td></tr>
+<tr><td>Address 2</td><td><input type="text" name="addr2"></td></tr>
+<tr><td>City*</td><td><input type="text" name="city" required></td></tr>
+<tr><td>State*</td>
+<td>
+<select name="state" required>
+<option value="">Select a State</option>
+<option selected>Dhaka</option>
+<option>Chittagong</option>
+<option>Rajshahi</option>
+<option>Khulna</option>
+<option>Sylhet</option>
+</select>
+</td></tr>
+<tr><td>Zip Code*</td><td><input type="text" name="zip" required pattern="[0-9]{4,10}" title="Enter 4–10 digit ZIP code"></td></tr>
+<tr><td>Country*</td>
+<td>
+<select name="country" required>
+<option value="">Select a Country</option>
+<option selected>Bangladesh</option>
+<option>India</option>
+<option>USA</option>
+<option>UK</option>
+</select>
+</td></tr>
+<tr><td>Phone</td><td><input type="text" name="phone" pattern="[0-9+ ]{6,15}" title="Enter valid phone number"></td></tr>
+<tr><td>Fax</td><td><input type="text" name="fax"></td></tr>
+<tr><td>Email*</td><td><input type="email" name="email" required placeholder="example@email.com"></td></tr>
+<tr>
+<td valign="top">Donation Amount*</td>
+<td>
+<label><input type="radio" name="amount" required> None</label>
+<label><input type="radio" name="amount"> $50</label>
+<label><input type="radio" name="amount"> $75</label>
+<label><input type="radio" name="amount"> $100</label>
+<label><input type="radio" name="amount"> $250</label>
+<label><input type="radio" name="amount"> Other</label><br>
+Other Amount: $ <input type="text" name="other" pattern="[0-9]+" title="Enter numbers only">
+</td>
+</tr>
+<tr>
+<td valign="top">Recurring Donation</td>
+<td>
+<label><input type="checkbox" name="recurring"> I am interested in giving on a regular basis.</label><br>
+Monthly Credit Card $ <input type="text" name="creditamt" pattern="[0-9]+"> for 
+<input type="text" name="months" pattern="[0-9]+"> months.
+</td>
+</tr>
+</table>
+</fieldset>
+
+<fieldset>
+<legend>Honorarium and Memorial Donation Information</legend>
+<table>
+<tr><td>I would like to make this donation:</td>
+<td>
+<label><input type="radio" name="honor"> To Honor</label>
+<label><input type="radio" name="honor"> In Memory Of</label>
+</td></tr>
+<tr><td>Name</td><td><input type="text" name="honorname"></td></tr>
+<tr><td>Acknowledge Donation to</td><td><input type="text" name="ack"></td></tr>
+<tr><td>Address</td><td><input type="text" name="ackaddr"></td></tr>
+<tr><td>City</td><td><input type="text" name="ackcity"></td></tr>
+<tr><td>State</td>
+<td>
+<select name="ackstate">
+<option value="">Select a State</option>
+<option>Dhaka</option>
+<option>Chittagong</option>
+<option>Rajshahi</option>
+<option>Khulna</option>
+</select>
+</td></tr>
+<tr><td>Zip</td><td><input type="text" name="ackzip"></td></tr>
+</table>
+</fieldset>
+
+<fieldset>
+<legend>Additional Information</legend>
+<table>
+<tr><td colspan="2">Please enter your name, company, or organization as you would like it to appear in our publications:</td></tr>
+<tr><td>Name</td><td><input type="text" name="pubname"></td></tr>
+<tr>
+<td valign="top">Comments</td>
+<td><textarea name="comments" rows="4" maxlength="200" placeholder="Please type any questions or feedback here (max 200 characters)"></textarea></td>
+</tr>
+<tr><td valign="top">How may we contact you?</td>
+<td>
+<label><input type="checkbox" name="contact" value="Email"> E-mail</label><br>
+<label><input type="checkbox" name="contact" value="Postal Mail"> Postal Mail</label><br>
+<label><input type="checkbox" name="contact" value="Telephone"> Telephone</label><br>
+<label><input type="checkbox" name="contact" value="Fax"> Fax</label>
+</td></tr>
+<tr><td valign="top">I would like to receive newsletters and updates by:</td>
+<td>
+<label><input type="checkbox" name="newsletter" value="Email"> E-mail</label><br>
+<label><input type="checkbox" name="newsletter" value="Postal Mail"> Postal Mail</label>
+</td></tr>
+</table>
+</fieldset>
+
+<div class="center">
+<input type="reset" value="Reset">
+<input type="submit" value="Continue">
+</div>
+</form>
+</body>
+</html>
