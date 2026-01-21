@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Library Management</title>
+<meta charset="UTF-8">
+</head>
+<body>
+
+<h2>Library Management System</h2>
+
+<label>Book Title:</label>
+<input type="text" id="titleInput">
+
+<label>Publication Year:</label>
+<input type="text" id="yearInput">
+
+<button onclick="addBook()">Add Book</button>
+
+<br><br>
+
+<table id="bookTable" border="1" cellpadding="8">
+<thead>
+<tr>
+<th>Title</th>
+<th>Year</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<script>
+function addBook() {
+var title = document.getElementById("titleInput").value;
+var year = document.getElementById("yearInput").value;
+var currentYear = new Date().getFullYear();
+
+var titleRegex = /^[A-Za-z]+$/;
+var yearRegex = /^[0-9]{4}$/;
+
+if (!titleRegex.test(title)) {
+alert("Title must contain alphabets only, no spaces or numbers.");
+return;
+}
+
+if (!yearRegex.test(year)) {
+alert("Year must be a 4-digit number.");
+return;
+}
+
+year = parseInt(year);
+
+if (year < 1900 || year > currentYear) {
+alert("Year must be between 1900 and " + currentYear + ".");
+return;
+}
+
+var table = document.getElementById("bookTable").getElementsByTagName("tbody")[0];
+var newRow = table.insertRow();
+var titleCell = newRow.insertCell(0);
+var yearCell = newRow.insertCell(1);
+
+titleCell.innerHTML = title;
+yearCell.innerHTML = year;
+
+if (year < 2000) {
+newRow.style.backgroundColor = "lightgray";
+} else {
+newRow.style.backgroundColor = "lightgreen";
+}
+
+document.getElementById("titleInput").value = "";
+document.getElementById("yearInput").value = "";
+}
+</script>
+
+</body>
+</html>

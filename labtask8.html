@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Kamrul Hassan">
+<meta name="description" content="University Admission Form for new students">
+<meta name="keywords" content="university, admission, AIUB, form, student">
+<title>University Admission Form</title>
+<link rel="stylesheet" href="labtask8_1.css">
+</head>
+<body>
+<header>
+<h1>AIUB University Admission Form</h1>
+<p>Please fill out all required information carefully before submitting.</p>
+</header>
+
+<form action="#" method="post" enctype="multipart/form-data">
+
+<fieldset>
+<legend><b>Personal Information</b></legend>
+<label for="fname">First Name:</label><br>
+<input type="text" id="fname" name="fname" maxlength="30" required><br><br>
+
+<label for="lname">Last Name:</label><br>
+<input type="text" id="lname" name="lname" maxlength="30" required><br><br>
+
+<label for="dob">Date of Birth:</label><br>
+<input type="date" id="dob" name="dob" required><br><br>
+
+<label>Gender:</label><br>
+<input type="radio" id="male" name="gender" value="Male" required> Male
+<input type="radio" id="female" name="gender" value="Female"> Female
+<input type="radio" id="other" name="gender" value="Other"> Other<br><br>
+
+<label for="email">Email:</label><br>
+<input type="email" id="email" name="email" required><br><br>
+
+<label for="phone">Phone Number:</label><br>
+<input type="text" id="phone" name="phone" maxlength="15" required><br><br>
+
+<label for="address">Address:</label><br>
+<textarea id="address" name="address" rows="3" cols="40" maxlength="100" required></textarea><br><br>
+</fieldset>
+
+<fieldset>
+<legend><b>Academic Information</b></legend>
+<label for="hsc">Highest Qualification:</label><br>
+<input type="text" id="hsc" name="hsc" maxlength="50" required><br><br>
+
+<label for="institution">Institution Name:</label><br>
+<input type="text" id="institution" name="institution" maxlength="50" required><br><br>
+
+<label for="result">Result (GPA/CGPA):</label><br>
+<input type="text" id="result" name="result" maxlength="5" required><br><br>
+
+<label for="year">Passing Year:</label><br>
+<input type="number" id="year" name="year" min="2000" max="2025" required><br><br>
+
+<label for="department">Preferred Department:</label><br>
+<select id="department" name="department" required>
+<option value="">-- Select Department --</option>
+<option value="CSE">Computer Science and Engineering (CSE)</option>
+<option value="EEE">Electrical and Electronic Engineering (EEE)</option>
+<option value="BBA">Bachelor of Business Administration (BBA)</option>
+<option value="Architecture">Architecture</option>
+</select><br><br>
+
+<label>Areas of Interest:</label><br>
+<input type="checkbox" name="interest" value="AI"> Artificial Intelligence
+<input type="checkbox" name="interest" value="Web"> Web Development
+<input type="checkbox" name="interest" value="Data"> Data Science
+<input type="checkbox" name="interest" value="Robotics"> Robotics<br><br>
+
+<label for="documents">Upload Required Documents:</label><br>
+<input type="file" id="documents" name="documents" accept=".pdf,.jpg,.png" required><br><br>
+</fieldset>
+
+<div class="buttons">
+<input type="reset" value="Reset">
+<input type="submit" value="Submit Application">
+</div>
+</form>
+
+<footer>
+<p>© 2025 AIUB - Online Admission System</p>
+</footer>
+</body>
+</html>
